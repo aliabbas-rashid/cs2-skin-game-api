@@ -1,0 +1,8 @@
+# python stuff
+/venv
+
+# local env stuff
+.env*.local
+
+# misc
+.DS_Store
