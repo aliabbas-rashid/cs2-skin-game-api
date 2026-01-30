@@ -1,5 +1,6 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from pip._internal.network import auth
 
 app = FastAPI(title="CS2 Skin Guessing Game API")
 app.add_middleware(
@@ -11,6 +12,8 @@ app.add_middleware(
     allow_methods=["GET", "POST"],
     allow_headers=["*"],
 )
+
+app.include_router(game.router, prefix="/api/game")
 
 @app.get("/")
 def root():
