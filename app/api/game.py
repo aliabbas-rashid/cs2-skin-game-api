@@ -13,3 +13,17 @@ def get_state():
             "url": ""
         }
     }
+
+@router.post("/guess")
+def submit_guess(payload: dict):
+    return {
+        "correct": False,
+        "message": "Incorrect, try again"
+    }
+
+@router.post("/start")
+def start_game(payload: dict):
+    return {
+        "game_id": "demo",
+        "timeLimit": 60
+    }
